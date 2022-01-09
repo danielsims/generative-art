@@ -3,8 +3,6 @@ const p5 = require('p5');
 const { PlaneGeometry } = require('three');
 const pallete = require('./palletes.json');
 
-// console.log(pallete.palletes[0].colors[0].r);
-
 // Optional preloader
 const preload = p5 => {
   // Can p5.loadImage() here and so forth
