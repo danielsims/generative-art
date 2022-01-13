@@ -1,0 +1,31 @@
+{
+  "name": "my-sketches",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sketch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bezier-easing": "^2.1.0",
+    "camera-project": "^1.0.2",
+    "canvas-sketch": "^0.7.4",
+    "canvas-sketch-util": "^1.10.0",
+    "convex-hull": "^1.0.3",
+    "gl-matrix": "^3.4.3",
+    "glsl-dither": "^1.0.1",
+    "glsl-noise": "^0.0.0",
+    "glslify": "^7.1.1",
+    "hex-rgb": "^5.0.0",
+    "load-asset": "^1.2.0",
+    "p5": "^1.4.0",
+    "perspective-camera": "^2.0.1",
+    "primitive-icosphere": "^1.0.2",
+    "regl": "^2.1.0",
+    "three": "^0.135.0",
+    "two.js": "^0.7.12"
+  }
+}

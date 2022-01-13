@@ -1,0 +1,60 @@
+const canvasSketch = require('canvas-sketch');
+const p5 = require('p5');
+
+// Optional preloader
+const preload = p5 => {
+  // Can p5.loadImage() here and so forth
+};
+
+// Sketch parameters
+const settings = {
+  p5: { p5, preload },
+  dimensions: [ 800, 800 ],
+  animate: false,
+  name: 'radiating-circle'
+};
+
+// Artwork function
+const sketch = ({ render, exportFrame }) => {
+
+  //Save on Keypress
+  window.addEventListener('keypress', async () => {
+    const result = await exportFrame({  });
+    console.log('Exported Result', result.dataURL);
+  });
+
+    //Render on Click
+    window.addEventListener('click', () => render());
+
+
+  return ({ p5, time, width, height }) => {
+
+    var x = width / 2;
+    var y = height / 2;
+
+    var g = p5.random(255); // 125
+    var b = p5.random(255); // 85
+
+    console.log(`g:${g} b:${b}`);
+
+    p5.background(0,g,b);
+
+
+    //number of circles
+    var circles = 9;
+    //for each circle
+    for (var total = 0; total < circles; total = total+1) {
+      //compute circle diameter based on reverse index (circles-total) (or max-current)
+      var diameter = (circles-total) * 80;
+      p5.fill(total * 30, g, b);
+      p5.noStroke();
+      //render the circle
+      p5.ellipse(x,y, diameter, diameter);
+      
+    }
+  
+  };
+};
+
+// Start the sketch
+canvasSketch(sketch, settings);
