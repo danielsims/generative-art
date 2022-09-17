@@ -14,7 +14,7 @@ console.log('Random Seed:', Random.getSeed());
 
 const settings = {
   suffix: Random.getSeed(),
-  dimensions: 'A4',
+  dimensions: 'a4',
   orientation: 'portrait',
   pixelsPerInch: 300,
   scaleToView: true,
@@ -32,12 +32,11 @@ const sketch = (props) => {
   const countY = height;
   
   for (let y = 0; y < countY; y++) {
-
-    for (let x = 0; x < countX; x++) {
+    for (let x = 0; x < countX; x = x + 0.25) {
       // draw the path
       const p = createPath();
       p.moveTo(x, y);
-      p.lineTo(x, y + Math.random(0,0.5))
+      p.lineTo(x, y + Math.random() * 2);
       paths.push(p);
     }
   }
@@ -58,7 +57,7 @@ const sketch = (props) => {
     lineJoin: 'round',
     lineCap: 'round',
     // in working units; you might have a thicker pen
-    lineWidth: 0.03,
+    lineWidth: 0.05,
     // Optimize SVG paths for pen plotter use
     optimize: true
   });
