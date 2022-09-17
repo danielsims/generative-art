@@ -9,16 +9,13 @@ const sketch = () => {
 
     const margin = 100;
     const randomizer1 = Math.random(0,100) * 100;
-    const randomizer2 = Math.random(0,100) * 200;
+    const randomizer2 = Math.random(0,100) * 300;
     const hue = Math.random(0,360) * 100;
 
     const r1 = width / 2 + randomizer1;
     const r2 = (width / 2) + randomizer2;
 
-
     // Create a radial gradient
-    // The inner circle is at x=110, y=90, with radius=30
-    // The outer circle is at x=100, y=100, with radius=70
     const gradient = context.createRadialGradient(width / 2, height / 2, width / 2, height / 2, r1, r2 / 2);
 
     // Add three color stops
