@@ -17,7 +17,7 @@ const sketch = () => {
 
     // Add color stops
 
-    gradient.addColorStop(0, `hsla(330, 100%, 85%, 1)`);
+    gradient.addColorStop(0, `hsla(${Math.random(0,200)}, 100%, 85%, 1)`);
     gradient.addColorStop(.35, `hsla(38, 100%, 80%, 1)`);
     gradient.addColorStop(.5, `hsla(221, 100%, 50%, 1)`);
     gradient.addColorStop(1, `hsla(0, 80%, 0%, 80%)`);

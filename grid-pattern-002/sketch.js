@@ -30,7 +30,7 @@ const sketch = (props) => {
     const paths = [];
 
     // Dimensions in working 'units' based on settings
-    const margin = 1.75
+    const margin = 2
     const gridPadding = 0.75
 
     const canvasWidth = width - (margin * 2);
@@ -50,17 +50,17 @@ const sketch = (props) => {
     const shadeCell = (x, y, gridHeight, gridWidth, padding) => {
 
         let radius = 0.15;
-        let repeat = getRandomInt(3, 7);
+        let repeat = getRandomInt(4, 6);
         let step = getRandomFloat(0.1,0.15,2)
 
         for (let c = 0; c < repeat; c++) {
 
-        radius = radius + step
+            radius = radius + step
 
-        // Hatch cell at randomised interval
-        const p = createPath();
-        p.arc((x + (gridWidth / 2)), y + (gridHeight / 2), radius, 0, 360)
-        paths.push(p);
+            // Hatch cell at randomised interval
+            const p = createPath();
+            p.arc((x + gridWidth / 2), y + (gridHeight / 2), radius, 0, 10)
+            paths.push(p);
 
         }
 

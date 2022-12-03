@@ -30,15 +30,15 @@ const sketch = (props) => {
     const paths = [];
 
     // Dimensions in working 'units' based on settings
-    const margin = 3
-    const gridPadding = 0.35
+    const margin = 5
+    const gridPadding = 0.75
 
     const canvasWidth = width - (margin * 2);
     const canvasHeight = height - (margin * 2);
 
     const grid = {
-        gridWidth: (canvasWidth / 12),
-        gridHeight: (canvasHeight / 5),
+        gridWidth: (canvasWidth / 10),
+        gridHeight: (canvasHeight / getRandomInt(5,25)),
         padding: gridPadding,
         margin: margin
     }
@@ -49,7 +49,7 @@ const sketch = (props) => {
 
     const shadeCell = (x, y, gridHeight, gridWidth, padding) => {
 
-        const shadeDensity = getRandomFloat(0.045, 0.25, 2)
+        const shadeDensity = getRandomFloat(0.04, 0.25, 2)
 
         for (let cellX = x; cellX <= x + (gridWidth - padding); cellX = cellX + shadeDensity) {
 
