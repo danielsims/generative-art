@@ -25,8 +25,7 @@ const sketch = () => {
         }
 
         let colorStops = [
-            { stop: 0, color: [255, 255, 255], label: "white" },
-            { stop: 20, color: [230, 230, 250], label: "lavender" },
+            { stop: 0, color: [230, 230, 255], label: "lavender" },
             { stop: 80, color: [200, 200, 240], label: "light purple" },
             { stop: 100, color: [100, 100, 200], label: "cornflower blue" },
             { stop: 255, color: [0, 0, 60], label: "midnight blue" }
@@ -34,7 +33,7 @@ const sketch = () => {
         let filteredData = gradientColorMap(imageData, colorStops);
 
 
-        context.putImageData(imageData, 0, 0);
+        context.putImageData(filteredData, 0, 0);
     };
 };
 canvasSketch(sketch, settings);
