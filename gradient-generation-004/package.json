@@ -1,0 +1,18 @@
+{
+  "name": "gradient-generation-004",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sketch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas-sketch": "^0.7.6",
+    "canvas-sketch-util": "^1.10.0",
+    "p5": "^1.5.0",
+    "perlin-noise": "^0.0.1",
+    "simplex-noise": "^4.0.1"
+  }
+}

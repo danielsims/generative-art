@@ -1,0 +1,41 @@
+const canvasSketch = require('canvas-sketch');
+const { lerp } = require('canvas-sketch-util/math');
+const { createNoise2D } = require('simplex-noise');
+const simplex = createNoise2D();
+
+const settings = {
+    dimensions: [512, 512]
+};
+
+const sketch = () => {
+    return ({ context, width, height }) => {
+        const imageData = context.createImageData(width, height);
+        const data = imageData.data;
+        for (let x = 0; x < width; x += 1) {
+            for (let y = 0; y < height; y += 1) {
+                // Normalize x and y values to be between 0 and 1
+                const u = x / width;
+                const v = y / height;
+
+                // Use lerp to smoothly transition between 0 and 255
+                let gray = lerp(0, 255, u);
+
+                // Add noise to the gray value
+                const noise = simplex(u * 5, v * 5);
+                gray = gray + (noise * 50);
+
+                // Clamp the gray value between 0 and 255
+                gray = Math.max(0, Math.min(255, gray));
+
+                // Set the pixel data
+                const index = (x + y * width) * 4;
+                data[index + 0] = gray;
+                data[index + 1] = gray;
+                data[index + 2] = gray;
+                data[index + 3] = 255;
+            }
+        }
+        context.putImageData(imageData, 0, 0);
+    };
+};
+canvasSketch(sketch, settings);
